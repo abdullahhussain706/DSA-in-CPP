@@ -35,7 +35,7 @@ class linkedlist
 				curr->next=newnode;
 			}
 		}
-		
+//		add node at start
 		void insert_at_head(int data)
 		{
 			node *newnode=new node;
