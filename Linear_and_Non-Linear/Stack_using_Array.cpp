@@ -6,7 +6,7 @@ int arr[5];
 
 void push(int n)
 {
-	if(top==4)
+	if(top>=4)
 	{
 		cout<<"Stack is overflow."<<endl;
 		return;
