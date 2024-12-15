@@ -1,3 +1,6 @@
+// Priority Queue based on values of ASCII
+
+
 #include<iostream>
 using namespace std;
 struct node
@@ -22,31 +25,31 @@ class Priority_queue
 			newnode->data=data;
 			newnode->pri=priority;
 			newnode->next=NULL;
-			if(front==NULL)
+			if(front==NULL)		// check for empty queue
 			{
 				front =newnode;
 				back=newnode;
 			}
-			else if(priority< front->pri)
+			else if(priority< front->pri)  		// insert at start (high priority)
 			{
 				newnode->next = front;
-                front = newnode;
+                		front = newnode;
 			}
-			else if(priority >= back->pri)
+			else if(priority >= back->pri)		// insert at end (low priority)
 			{
 				back->next=newnode;
 				back=newnode;
 			}
-			else 
-            {
-            curr = front;
-            while (curr->next != NULL && curr->next->pri < priority)
-            {
-                curr = curr->next;
-    		}
-            	newnode->next = curr->next;
-                curr->next = newnode;
-                }
+			else 		// insert at middle
+            		{
+           			curr = front;
+        			while (curr->next != NULL && curr->next->pri < priority)
+            			{
+                			curr = curr->next;
+    				}
+            			newnode->next = curr->next;
+                		curr->next = newnode;
+                	}
 		}
 		void display()
 		{
