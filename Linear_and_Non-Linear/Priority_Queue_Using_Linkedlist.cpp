@@ -41,15 +41,15 @@ class Priority_queue
 				back=newnode;
 			}
 			else 		// insert at middle
-            		{
-           			curr = front;
-        			while (curr->next != NULL && curr->next->pri < priority)
-            			{
-                			curr = curr->next;
-    				}
-            			newnode->next = curr->next;
-                		curr->next = newnode;
-                	}
+            {
+           		curr = front;
+        		while (curr->next != NULL && curr->next->pri < priority)
+            	{
+                	curr = curr->next;
+    			}
+            	newnode->next = curr->next;
+                curr->next = newnode;
+            }
 		}
 		void display()
 		{
